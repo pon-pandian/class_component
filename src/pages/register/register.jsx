@@ -12,10 +12,8 @@ const Register = () => {
   const LoginNavigate = useNavigate();
 
   const [form] = Form.useForm();
-  const [formValues, setFormValues] = useState();
 
   const show = (values) => {
-    setFormValues(values);
     (async () => {
       const rawResponse = await fetch('https://admin-app-bdsu.onrender.com/api/v1/admin/new', {
         method: 'POST',
@@ -111,8 +109,6 @@ const Register = () => {
                 
                   />
                 </Form.Item>
-          
-          
           
                 <Form.Item
                   name="Email"

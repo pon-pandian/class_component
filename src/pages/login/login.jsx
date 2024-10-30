@@ -45,6 +45,7 @@ const Login = () => {
   };
   
   return (
+    
     <React.Fragment>
       <Row className="bg-black flex_center login_outer_box">
         <Col span={6} className="bg-pink login_box">

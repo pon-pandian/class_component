@@ -9,7 +9,7 @@ import {
   UserAddOutlined,
   createFromIconfontCN,
 } from "@ant-design/icons";
-import { Button, Layout, Menu, theme } from "antd";
+import { Button, Layout, Menu } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "../../redux/actionCreator/actionCreator";
 import { persistor } from "../../redux/store/store";
@@ -69,9 +69,10 @@ const PrivateLayout = () => {
                 ></img>
               </Col>
               <Col span={12}>
-                <Row className="fw-bold mt-2 ellipsis_for_words">{Name}</Row>
+                <Row className="fw-bold mt-2 ellipsis_for_words" title={Name}>{Name}</Row>
                 <Row>
                   <a
+                    title={Email}
                     className="text-dark fw-bold aside_mail ellipsis_for_words"
                     href="mailto:pon@gmail.com"
                   >

@@ -9,27 +9,20 @@ import { GoStack } from "react-icons/go";
 import { LuDollarSign, LuServer } from "react-icons/lu";
 import { FiEdit, FiUser, FiUsers } from "react-icons/fi";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { AppstoreOutlined, BarsOutlined, LayoutOutlined } from "@ant-design/icons";
-import { Button, Layout, Space, Table, Tag, Badge } from "antd";
+import { AppstoreOutlined, LayoutOutlined } from "@ant-design/icons";
+import { Layout, Space, Table, Tag, Badge } from "antd";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Column from "antd/es/table/Column";
 
 const Dashboard = () => {
-  const [Box, setBox] = useState("cards");
- 
+
+  const [Box, setBox] = useState("cards"); 
   const { Header, Content } = Layout;
   const editNavigate = useNavigate();
   const deleteNavigate = useNavigate();
   const Token = useSelector((item) => item.token.token.token);
   const [AllUsersData, setAllUsersData] = useState([]);
-  // const [MaleData, setMaleData] = useState([]);
-  // const [FemaleData, setFemaleData] = useState([]);
-  // const [FrontEnd, setFrontEnd] = useState([]);
-  // const [BackEnd, setBackEnd] = useState([]);
-  // const [HR, setHR] = useState([]);
-  // const [BDE, setBDE] = useState([]);
-  // const [FullStack, setFullStack] = useState([]);
   const [ totalCards, setTotalCards ] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [GenderModel, setGenderModel] = useState("No data");
@@ -99,6 +92,7 @@ const Dashboard = () => {
   const handleOk = () => {
     setIsModalOpen(false);
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -119,25 +113,6 @@ const Dashboard = () => {
             return acc;
           }, {});
           setTotalCards(totalCardsReduce);
-     
-
-        // setMaleData(
-        //   success.data.data.filter((values) => values.gender === "Male")
-        // );
-        // setFemaleData(
-        //   success.data.data.filter((values) => values.gender === "Female")
-        // );
-        // setFrontEnd(
-        //   success.data.data.filter((values) => values.role === "FrontEnd")
-        // );
-        // setBackEnd(
-        //   success.data.data.filter((values) => values.role === "BackEnd")
-        // );
-        // setHR(success.data.data.filter((values) => values.role === "HR"));
-        // setBDE(success.data.data.filter((values) => values.role === "BDE"));
-        // setFullStack(
-        //   success.data.data.filter((values) => values.role === "FullStack")
-        // );
       })
       .catch((error) => console.log(error));
   };
@@ -178,14 +153,6 @@ const Dashboard = () => {
   const editForm = (id) => {
     editNavigate(`/edit/${id}`);
   };
-
-  // const buttonCardBox = (value) => {
-  //   setBox(value);
-  // };
-
-  // const buttonTableBox = (value) => {
-  //   setBox(value);
-  // };
 
   return (
     <>
@@ -267,20 +234,6 @@ const Dashboard = () => {
               },
             ]}
           />
-              {/* <Button
-                onClick={() => buttonCardBox("cards")}
-                id="card_view"   
-                className={Box === "cards"? "border-0 box_black" : "bg-grey border-0" }
-              >
-                <AppstoreOutlined />
-              </Button>
-              <Button
-                onClick={() => buttonTableBox("table")}
-                id="table_view"
-                className="bg-grey border-0"
-              >
-                <LuTable2 />
-              </Button> */}
             </Row>
           </Row>
         </Header>
@@ -381,7 +334,9 @@ const Dashboard = () => {
                           </Row>
                         </Modal>
 
-                        <Row className="d-flex justify-content-center text-pink fw-bold mt-2 ellipsis_for_words">
+                        <Row className="d-flex justify-content-center text-pink fw-bold mt-2 ellipsis_for_words" title={dashboardValues.first_name +
+                            " " +
+                            dashboardValues.last_name}>
                           {dashboardValues.first_name +
                             " " +
                             dashboardValues.last_name}
@@ -390,6 +345,7 @@ const Dashboard = () => {
                           <a
                             className="text-light-grey fw-bold aside_mail"
                             href="mailto:pon@gmail.com"
+                            title={dashboardValues.email}
                           >
                             {dashboardValues.email}
                           </a>

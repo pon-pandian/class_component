@@ -38,7 +38,7 @@ const AddUser = () => {
     const result = await getBase64(files);
     setBaseImage(result);
   };
-
+  
   const getBase64 = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -86,6 +86,7 @@ const AddUser = () => {
       })
       .catch((error) => console.log(error));
   };
+  
   useEffect(() => {
     fetchForm(id);
     form.resetFields();
@@ -343,7 +344,9 @@ const AddUser = () => {
                           </Form.Item>
                         </Col>
                         <Col span={6} className="ms-4 mt-4">
+                          
                           <Image src={BaseImage} width={100} className="" />
+
                         </Col>
                         <Col span={4} className="ms-2 mt-2">
                           <Button
@@ -591,13 +594,12 @@ const AddUser = () => {
                           {File ? (
                             <Image src={BaseImage} width={100} className="" />
                           ) : (
-                            <Image
-                              src={AllUsersData.imageurl}
-                              width={100}
-                              className=""
-                            />
-                          )}
+                          <>
+                          <Image src={AllUsersData.imageurl} width={100} className=""/>
+                          </>
+                        )}
                         </Col>
+                     
                         <Col span={4} className="mt-2">
                           <Button
                             size="large"
