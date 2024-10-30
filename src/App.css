@@ -99,7 +99,7 @@ a{
   color: rgba(187, 187, 187, 1);
 }
 .aside_margin{
-  margin-top:286px;
+  margin-top:5px;
 }
 
 .card{
@@ -408,3 +408,11 @@ a{
   background-color:black!important;
 }
 
+:root {
+  background: black;
+}
+.ellipsis_for_words{
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}

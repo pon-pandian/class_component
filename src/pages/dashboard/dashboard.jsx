@@ -118,7 +118,6 @@ const Dashboard = () => {
             acc[curr.role] = (acc[curr.role] || 0) + 1;
             return acc;
           }, {});
-          console.log("display",totalCardsReduce );
           setTotalCards(totalCardsReduce);
      
 
@@ -140,7 +139,7 @@ const Dashboard = () => {
         //   success.data.data.filter((values) => values.role === "FullStack")
         // );
       })
-      .catch((error) => console.log("error -->", error));
+      .catch((error) => console.log(error));
   };
 
   const editTableValues = (id) => {
@@ -382,12 +381,12 @@ const Dashboard = () => {
                           </Row>
                         </Modal>
 
-                        <Row className="d-flex justify-content-center text-pink fw-bold mt-2 ">
+                        <Row className="d-flex justify-content-center text-pink fw-bold mt-2 ellipsis_for_words">
                           {dashboardValues.first_name +
                             " " +
                             dashboardValues.last_name}
                         </Row>
-                        <Row className="d-flex justify-content-center">
+                        <Row className="d-flex justify-content-center ellipsis_for_words">
                           <a
                             className="text-light-grey fw-bold aside_mail"
                             href="mailto:pon@gmail.com"

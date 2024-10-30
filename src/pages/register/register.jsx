@@ -34,7 +34,6 @@ const Register = () => {
       });
       const content = await rawResponse.json();
     
-      console.log(content);
       if(content.success){
         notification.success({
           message: 'Success',
@@ -141,6 +140,10 @@ const Register = () => {
                     {
                       required: true,
                     },
+                    {
+                      pattern:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/,
+                      message: "password must be min 1-symbol 1-caps 1-small 1-number 0-space"
+                    }
                   ]}
                 >
                   <Input.Password

@@ -69,10 +69,10 @@ const PrivateLayout = () => {
                 ></img>
               </Col>
               <Col span={12}>
-                <Row className="fw-bold mt-2">{Name}</Row>
+                <Row className="fw-bold mt-2 ellipsis_for_words">{Name}</Row>
                 <Row>
                   <a
-                    className="text-dark fw-bold aside_mail"
+                    className="text-dark fw-bold aside_mail ellipsis_for_words"
                     href="mailto:pon@gmail.com"
                   >
                     {Email}

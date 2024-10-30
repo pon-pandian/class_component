@@ -37,7 +37,6 @@ const AddUser = () => {
     setFile(files);
     const result = await getBase64(files);
     setBaseImage(result);
-    console.log("Base64--->", result);
   };
 
   const getBase64 = (file) =>
@@ -84,9 +83,8 @@ const AddUser = () => {
       })
       .then((success) => {
         setAllUsersData(success.data.data[0]);
-        console.log("All DATA", AllUsersData);
       })
-      .catch((error) => console.log("error -->", error));
+      .catch((error) => console.log(error));
   };
   useEffect(() => {
     fetchForm(id);
@@ -174,7 +172,6 @@ const AddUser = () => {
 
           const content = await rawResponse.json();
 
-          console.log(content);
           if (content.success) {
             notification.success({
               message: "Success",
