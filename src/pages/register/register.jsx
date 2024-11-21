@@ -12,10 +12,12 @@ const Register = () => {
   const LoginNavigate = useNavigate();
 
   const [form] = Form.useForm();
+ 
 
   const show = (values) => {
+   
     (async () => {
-      const rawResponse = await fetch('https://admin-app-bdsu.onrender.com/api/v1/admin/new', {
+      const rawResponse = await fetch('http://node.mitrahsoft.co.in/register', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -31,6 +33,7 @@ const Register = () => {
      )
       });
       const content = await rawResponse.json();
+      console.log("register-->",rawResponse.json())
     
       if(content.success){
         notification.success({

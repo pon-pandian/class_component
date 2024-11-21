@@ -12,7 +12,7 @@ const Login = () => {
   
   const show = (values) => {
     (async () => {
-      const rawResponse = await fetch('https://admin-app-bdsu.onrender.com/api/v1/admin/login', {
+      const rawResponse = await fetch('http://node.mitrahsoft.co.in/login', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -25,8 +25,10 @@ const Login = () => {
      )
       });
       const content = await rawResponse.json();
-      if(content.success){
-        const token = content.data;
+      console.log("login",content)
+
+      if(content){
+        const token = content.token;
         notification.success({
           message: 'Success',
           description: 'Login success',
