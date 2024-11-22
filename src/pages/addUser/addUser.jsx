@@ -77,7 +77,7 @@ const AddUser = () => {
 
   const fetchForm = (id) => {
     axios
-      .get(`https://admin-app-bdsu.onrender.com/api/v1/users/${id}`, {
+      .get(`http://node.mitrahsoft.co.in/users${id}`, {
         headers: {
           Authorization: `Bearer ${Token}`,
         },
@@ -112,7 +112,7 @@ const AddUser = () => {
       ? ImageURL
         ? axios
             .patch(
-              `https://admin-app-bdsu.onrender.com/api/v1/users/${id}`,
+              `http://node.mitrahsoft.co.in/user/${id}`,
               {
                 first_name: values.FirstName,
                 last_name: values.LastName,

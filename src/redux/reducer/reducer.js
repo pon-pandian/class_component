@@ -2,7 +2,7 @@ import { LOGIN, LOGOUT } from '../actionType/actionType';
 
 const appState = {
         login:false,  
-        token: "" 
+        token: "" ,
  }
 
 export const rootReducer = (state = appState, action) => {
@@ -12,7 +12,7 @@ export const rootReducer = (state = appState, action) => {
         return {
           ...state,
           login: true,
-          token: action.payload
+          token: action.payload,
         }
 
       case LOGOUT: 
